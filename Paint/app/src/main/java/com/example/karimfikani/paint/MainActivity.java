@@ -5,8 +5,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -162,7 +163,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             if (success) {
                 float orientation[] = new float[3];
                 SensorManager.getOrientation(R, orientation); // orientation contains: yaw, pitch and roll
-                float yaw = (float)(-orientation[0]*360 / (2.0*Math.PI));
+                float yaw = (float)(-orientation[0]*360.0f / (2.0f*Math.PI));
                 drawingFragment.rotate(yaw);
             }
         }
@@ -175,7 +176,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
      */
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 
     /**
