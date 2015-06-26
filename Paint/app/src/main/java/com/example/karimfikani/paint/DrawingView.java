@@ -115,7 +115,7 @@ public class DrawingView extends SurfaceView {
     }
 
     /**
-     * 
+     *
      * @param color
      */
     public void setColor(int color) {
@@ -232,6 +232,9 @@ public class DrawingView extends SurfaceView {
         new SaveDrawingsToFile(DrawingView.this.getContext(), drawingPathStack).execute();
     }
 
+    /**
+     *
+     */
     private class SaveDrawingsToFile extends AsyncTask<Intent,Void,Boolean> {
         private Context context;
         private ArrayList<DrawingPath> drawings;
