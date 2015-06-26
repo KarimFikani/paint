@@ -115,11 +115,12 @@ public class DrawingView extends SurfaceView {
     }
 
     /**
-     *
+     * 
+     * @param color
      */
-    public void toggleColor() {
-        toggleColor = !toggleColor;
-        paintColor = toggleColor ? Color.RED : Color.GREEN;
+    public void setColor(int color) {
+        paintColor = color;
+
         drawPaint.setColor(paintColor);
 
         Iterator it = drawingPathStack.iterator();

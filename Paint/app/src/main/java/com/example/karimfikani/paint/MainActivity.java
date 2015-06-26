@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import yuku.ambilwarna.AmbilWarnaDialog;
+
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener, SensorEventListener {
 
@@ -105,7 +107,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
 
             case R.id.toggleColorButton:
-                drawingFragment.toggleColor();
+                AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, 0xFF00FF00, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+                    @Override
+                    public void onOk(AmbilWarnaDialog dialog, int color) {
+                        // color is the color selected by the user.
+                        drawingFragment.setColor(color);
+                    }
+
+                    @Override
+                    public void onCancel(AmbilWarnaDialog dialog) {
+                        // cancel was selected by the user
+                    }
+                });
+                dialog.show();
                 break;
 
             case R.id.undoButton:

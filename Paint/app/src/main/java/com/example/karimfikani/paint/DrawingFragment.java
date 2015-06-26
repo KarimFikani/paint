@@ -30,8 +30,8 @@ public class DrawingFragment extends Fragment {
         drawingView.clearDrawing();
     }
 
-    public void toggleColor() {
-        drawingView.toggleColor();
+    public void setColor(int color) {
+        drawingView.setColor(color);
     }
 
     public void undo() {
